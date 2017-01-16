@@ -1,0 +1,37 @@
+********************************************************************************
+product = WebSphere Application Server 16.0.0.4 (wlp-1.0.15.cl160420161113-0206)
+wlp.install.dir = /home/trond/work/vester/kode/vstart/server/target/liberty/wlp/
+java.home = /usr/lib/jvm/java-8-oracle/jre
+java.version = 1.8.0_101
+java.runtime = Java(TM) SE Runtime Environment (1.8.0_101-b13)
+os = Linux (4.8.0-32-generic; amd64) (en_US)
+process = 6954@trond-ThinkPad-T430
+********************************************************************************
+[1/16/17 14:11:27:761 CET] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[1/16/17 14:11:27:772 CET] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/16.0.0.4/lafiles/en.html
+[1/16/17 14:11:28:831 CET] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.257 seconds
+[1/16/17 14:11:28:884 CET] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[1/16/17 14:11:29:932 CET] 0000001b com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host *  (IPv6) port 9080.
+[1/16/17 14:11:29:935 CET] 00000010 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications. 
+[1/16/17 14:11:30:308 CET] 00000021 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application JavaHelloWorldApp.
+[1/16/17 14:11:30:617 CET] 00000021 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[1/16/17 14:11:30:640 CET] 00000021 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: JavaHelloWorldApp-1.0-SNAPSHOT.
+[1/16/17 14:11:30:643 CET] 00000021 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module JavaHelloWorldApp-1.0-SNAPSHOT has been bound to default_host.
+[1/16/17 14:11:30:645 CET] 00000021 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://10.118.201.123:9080/JavaHelloWorldApp/
+[1/16/17 14:11:30:650 CET] 00000021 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application JavaHelloWorldApp started in 0.343 seconds.
+[1/16/17 14:11:30:696 CET] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [servlet-3.1].
+[1/16/17 14:11:30:702 CET] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 1.873 seconds.
+[1/16/17 14:11:30:702 CET] 00000017 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The server defaultServer is ready to run a smarter planet.
+[1/16/17 14:11:30:840 CET] 00000018 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /home/trond/work/vester/kode/vstart/server/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[1/16/17 14:11:39:864 CET] 00000019 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/JavaHelloWorldApp
+[1/16/17 14:11:39:882 CET] 00000019 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/17 14:11:39:979 CET] 00000019 com.ibm.ws.webcontainer.extension                            W SRVE0190E: File not found: /index2.html
+[1/16/17 14:12:14:814 CET] 00000019 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [JavaHelloWorldApp] [/JavaHelloWorldApp] [vtester.server.servlet.DataServlet]: Initialization successful.
+[1/16/17 14:12:38:353 CET] 0000000d com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0085I: The server defaultServer is stopping because the JVM is exiting.
+[1/16/17 14:12:38:356 CET] 00000031 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[1/16/17 14:12:38:360 CET] 00000032 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host *  (IPv6) port 9080.
+[1/16/17 14:12:38:361 CET] 00000032 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://10.118.201.123:9080/JavaHelloWorldApp/
+[1/16/17 14:12:38:370 CET] 00000031 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Server quiesce complete.
+[1/16/17 14:12:38:397 CET] 00000029 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application JavaHelloWorldApp has stopped successfully.
+[1/16/17 14:12:38:587 CET] 0000000e com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Server shutdown requested on Monday, January 16, 2017 at 2:12 PM. The server defaultServer is shutting down.
+[1/16/17 14:12:38:663 CET] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server defaultServer stopped after 1 minutes, 11.091 seconds.
