@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/SimpleServlet")
-public class DataServlet extends HttpServlet {
+public class ApiServlet extends HttpServlet {
 
 
     /**
@@ -18,8 +18,8 @@ public class DataServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        response.getWriter().print("Hello World!");
+        response.setContentType("application/json");
+        response.getWriter().print("[{\"displayText\":\"hepp\"},{\"displayText\":\"hei\"}]");
     }
 
 }

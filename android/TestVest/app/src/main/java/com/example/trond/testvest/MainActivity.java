@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         WebView myWebView = (WebView) findViewById(R.id.webview);
-        myWebView.loadUrl("http://www.vg.no");
+        myWebView.loadUrl("https://trester.eu-gb.mybluemix.net/");
     }
 
     @Override
