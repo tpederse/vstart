@@ -1,5 +1,7 @@
 package vtester.db;
 
+import vtester.db.unchecked.UncheckedPreparedStatement;
+
 import javax.sql.DataSource;
 import javax.xml.crypto.Data;
 import java.sql.Connection;
@@ -36,9 +38,9 @@ public class DbConnection implements AutoCloseable {
     }
 
 
-    public PreparedStatement prepareStatement(String sql) {
+    public UncheckedPreparedStatement prepareStatement(String sql) {
         try {
-            return connection.prepareStatement(sql);
+            return new UncheckedPreparedStatement(connection.prepareStatement(sql));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
