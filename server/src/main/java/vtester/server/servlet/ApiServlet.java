@@ -1,6 +1,12 @@
 package vtester.server.servlet;
 
+import org.jsonbuddy.pojo.JsonGenerator;
+import org.jsonbuddy.pojo.PojoMapper;
+import vtester.db.ServiceLocator;
+import vtester.loanrequest.LoanRequestRepo;
+
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,13 +19,22 @@ import javax.servlet.http.HttpServletResponse;
 public class ApiServlet extends HttpServlet {
 
 
-    /**
-     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ServiceLocator.startThreadContext();
         response.setContentType("application/json");
-        response.getWriter().print("[{\"displayText\":\"hepp\"},{\"displayText\":\"hei\"}]");
+        LoanRequestRepo.addLoanRequest("Speta");
+        List returnValue = LoanRequestRepo.getAll();
+        response.getWriter().print(JsonGenerator.generate(returnValue).toJson());
+        ServiceLocator.endThreadContext();
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+        ServiceLocator.startThreadContext();
+        response.setContentType("application/json");
+        System.out.println(req.getReader().readLine());
+
+        ServiceLocator.endThreadContext();
+    }
 }
