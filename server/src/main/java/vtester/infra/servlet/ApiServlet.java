@@ -1,7 +1,12 @@
 package vtester.infra.servlet;
 
+import org.jsonbuddy.parse.JsonParser;
 import org.jsonbuddy.pojo.JsonGenerator;
+import org.jsonbuddy.pojo.PojoMapper;
+import vtester.infra.db.DbApi;
 import vtester.infra.db.ServiceLocator;
+import vtester.infra.logger.OurLogger;
+import vtester.loanrequest.LoanRequestCommand;
 import vtester.loanrequest.LoanRequestRepo;
 
 import java.io.IOException;
@@ -22,9 +27,10 @@ public class ApiServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServiceLocator.startThreadContext();
         response.setContentType("application/json");
-        LoanRequestRepo.addLoanRequest("Speta");
+
         List returnValue = LoanRequestRepo.getAll();
         response.getWriter().print(JsonGenerator.generate(returnValue).toJson());
+        DbApi.commit();
         ServiceLocator.endThreadContext();
     }
 
@@ -32,8 +38,12 @@ public class ApiServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
         ServiceLocator.startThreadContext();
         response.setContentType("application/json");
-        System.out.println(req.getReader().readLine());
+        String requsetJson = req.getReader().readLine();  //TODO: accept Multiline
+        OurLogger.logInputFromUser(requsetJson);
+        LoanRequestCommand command = PojoMapper.map(JsonParser.parseToObject(requsetJson), LoanRequestCommand.class);
+        LoanRequestRepo.addLoanRequest(command);
 
+        DbApi.commit();
         ServiceLocator.endThreadContext();
     }
 }

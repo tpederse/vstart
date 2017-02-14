@@ -1,12 +1,9 @@
 package vtester.loanrequest;
 
-import vtester.db.DbApi;
-import vtester.db.ServiceLocator;
-import vtester.db.unchecked.UncheckedPreparedStatement;
-import vtester.db.unchecked.UncheckedResultSet;
+import vtester.infra.db.DbApi;
+import vtester.infra.db.unchecked.UncheckedPreparedStatement;
+import vtester.infra.db.unchecked.UncheckedResultSet;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,11 +17,11 @@ public class LoanRequestRepo {
         return returnValue;
     }
 
-    public static void addLoanRequest(String title) {
+    public static void addLoanRequest(LoanRequestCommand createCommand) {
         UncheckedPreparedStatement updateStatement = DbApi
                 .getUpdateStatement("insert into offers (id, name) values (?,?)");
         updateStatement.setLong(1,DbApi.getId());
-        updateStatement.setString(2,title);
+        updateStatement.setString(2, createCommand.requestLoanName);
         updateStatement.executeUpdate();
 
     }

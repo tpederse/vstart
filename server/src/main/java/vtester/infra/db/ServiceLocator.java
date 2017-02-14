@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ServiceLocator implements AutoCloseable {
+public class ServiceLocator {
     private static Map<Long, ServiceLocator> pool = new HashMap<>();
     private DbConnection dbConnection;
 
@@ -27,7 +27,9 @@ public class ServiceLocator implements AutoCloseable {
     }
 
     public static void endThreadContext() {
+        ServiceLocator thisLocator = instance();
         pool.remove(Thread.currentThread().getId());
+        if(thisLocator.dbConnection!=null)throw new RuntimeException("Unhandled db connection!");
     }
 
 
@@ -48,10 +50,5 @@ public class ServiceLocator implements AutoCloseable {
         if(dbConnection==null)return;
         dbConnection.close();
         dbConnection=null;
-    }
-
-    @Override
-    public void close() throws Exception {
-        if(dbConnection!=null)throw new RuntimeException("Unhandled db connection!");
     }
 }

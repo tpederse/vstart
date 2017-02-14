@@ -1,7 +1,7 @@
 
 var populateList= function( fromServer ){
     $.each(fromServer, function( index, line ) {
-        $("#possibleInvestments").append('<li><a href="/case?id=1">'+ line.displayText   +'</a></li>');
+        $("#possibleInvestments").append('<li><a href="/case?id=1">'+ line   +'</a></li>');
     })
 }
 

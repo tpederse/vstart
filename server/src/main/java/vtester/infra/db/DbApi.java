@@ -19,4 +19,12 @@ public class DbApi {
     public static Long getId() {
         return 500L;
     }
+
+    public static void commit() {
+        ServiceLocator.instance().commit();
+    }
+
+    public static void rollBack(){
+        ServiceLocator.instance().rollBack();
+    }
 }
