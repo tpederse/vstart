@@ -1,7 +1,7 @@
-package vtester.db;
+package vtester.infra.db;
 
-import vtester.db.unchecked.UncheckedPreparedStatement;
-import vtester.db.unchecked.UncheckedResultSet;
+import vtester.infra.db.unchecked.UncheckedPreparedStatement;
+import vtester.infra.db.unchecked.UncheckedResultSet;
 
 /**
  * Created by trond on 09.02.17.

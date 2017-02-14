@@ -1,4 +1,4 @@
-package vtester.db;
+package vtester.infra.db;
 
 import org.flywaydb.core.Flyway;
 import org.postgresql.ds.PGPoolingDataSource;

@@ -1,4 +1,4 @@
-package vtester.db.unchecked;
+package vtester.infra.db.unchecked;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

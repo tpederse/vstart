@@ -1,11 +1,9 @@
-package vtester.db;
+package vtester.infra.db;
 
-import vtester.db.unchecked.UncheckedPreparedStatement;
+import vtester.infra.db.unchecked.UncheckedPreparedStatement;
 
 import javax.sql.DataSource;
-import javax.xml.crypto.Data;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 

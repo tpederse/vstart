@@ -1,4 +1,4 @@
-package vtester.db;
+package vtester.infra.db;
 
 import java.util.HashMap;
 import java.util.Map;

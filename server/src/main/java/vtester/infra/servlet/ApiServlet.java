@@ -1,8 +1,7 @@
-package vtester.server.servlet;
+package vtester.infra.servlet;
 
 import org.jsonbuddy.pojo.JsonGenerator;
-import org.jsonbuddy.pojo.PojoMapper;
-import vtester.db.ServiceLocator;
+import vtester.infra.db.ServiceLocator;
 import vtester.loanrequest.LoanRequestRepo;
 
 import java.io.IOException;

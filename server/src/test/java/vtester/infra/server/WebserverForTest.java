@@ -1,9 +1,9 @@
-package vtester.server;
+package vtester.infra.server;
 
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletHandler;
-import vtester.server.servlet.ApiServlet;
+import vtester.infra.servlet.ApiServlet;
 
 
 public class WebserverForTest {
