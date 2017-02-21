@@ -18,3 +18,5 @@ $.ajax({
         window.alert(errorThrown);
     }
 });
+
+$("#menu").load("menu.html");
