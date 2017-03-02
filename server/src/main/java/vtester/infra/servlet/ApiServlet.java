@@ -3,6 +3,7 @@ package vtester.infra.servlet;
 import org.jsonbuddy.parse.JsonParser;
 import org.jsonbuddy.pojo.JsonGenerator;
 import org.jsonbuddy.pojo.PojoMapper;
+import vtester.LoginCommand;
 import vtester.infra.db.DbApi;
 import vtester.infra.db.ServiceLocator;
 import vtester.infra.logger.OurLogger;
@@ -47,7 +48,6 @@ public class ApiServlet extends HttpServlet {
 
             doPostLogic(req.getPathInfo(),requsetJson);
 
-
             DbApi.commit();
             ServiceLocator.endThreadContext();
         }catch(Exception e){
@@ -61,6 +61,7 @@ public class ApiServlet extends HttpServlet {
 
     private JsonToUser doPostLogic(String path, String requsetJson) {
         if(path.startsWith("/postLoanRequest"))return doLogic(LoanRequestCommand.class,requsetJson);
+        if(path.startsWith("/login"))return doLogic(LoginCommand.class,requsetJson);
         throw new RuntimeException("Unknown Service "+path);
     }
 
